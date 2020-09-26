@@ -1,0 +1,137 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="WebApplication1.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+
+    <link href="BoostTrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="DataTable/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="FontAwesome/css/all.css" rel="stylesheet" />
+
+    <link href="css/StyleSheet1.css" rel="stylesheet" />
+
+    <script src="BoostTrap/js/jquery-3.5.1.slim.min.js"></script>
+    <script src="BoostTrap/js/popper.min.js"></script>
+    <script src="BoostTrap/js/bootstrap.min.js"></script>
+    <script src="DataTable/js/jquery.dataTables.min.js"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <div>
+            <nav class ="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="#">
+                    <img src="img/books.png" width="30" height="30" />
+                     Lybrary
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-toggle="collapse" 
+                        data-target ="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                
+                <div class="navbar-collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- "Meniul propriu zis" -->
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="Home.aspx">Home</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">About Us</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Terms</a>
+                        </li>
+                    </ul>
+                    
+
+                    <ul class="navbar-nav">                    
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="View_Books_HREF" runat="server" OnClick="View_Books_HREF_Click"
+                            >View Books</asp:LinkButton>
+                        </li>
+
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="User_Login_HREF" runat="server" OnClick="User_Login_HREF_Click"
+                            >User Login</asp:LinkButton>
+                        </li>
+
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="Sign_In_HREF" runat="server" OnClick="Sign_In_HREF_Click"
+                            >Sign Up</asp:LinkButton>
+                        </li>
+
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LogOut_HREF" runat="server" OnClick="LogOut_HREF_Click" Visible="False"
+                            >Logout</asp:LinkButton>
+                        </li>
+
+                          <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="User" runat="server" OnClick="User_Click" Visible="False"
+                            >Hello user</asp:LinkButton>
+                        </li>                                         
+                    </ul>
+                </div>
+            </nav>
+         </div>
+
+            <div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+
+                </asp:ContentPlaceHolder>
+            </div>
+
+             <!-- Partea de jos,  nbsp - "space" -->
+            <footer>
+                <div id="footer1" class="container-fluid">                          <!-- The main div, care creeaza partea maronie -->
+                    <div class="row">                                               <!-- Div care largeste dimensiunea primului div -->
+                        <div class ="col-xs-12 col-sm-12 col-md-12 text-center">    <!-- Div care centreaza elementele pe mijloc -->
+                            <p>                    
+                                 <asp:LinkButton CssClass="footerlinks" ID="Admin_Login_HREF" runat="server" OnClick="Admin_Login_HREF_Click">
+                                  Admin Login
+                                 </asp:LinkButton> &nbsp;
+                                 <asp:LinkButton CssClass="footerlinks" ID="Author_Managment_HREF" runat="server" OnClick="Author_Managment_HREF_Click" Visible="False" > 
+                                  Author Managment
+                                 </asp:LinkButton> &nbsp;
+                                 <asp:LinkButton CssClass="footerlinks" ID="Publisher_Managment_HREF" runat="server" OnClick="Publisher_Managment_HREF_Click" Visible="False">  <!-- Butoane -->
+                                  Publisher Managment
+                                 </asp:LinkButton> &nbsp;
+                                 <asp:LinkButton CssClass="footerlinks" ID="Book_Inventory_HREF" runat="server" OnClick="Book_Inventory_HREF_Click" Visible="False">
+                                  Book Inventory
+                                 </asp:LinkButton> &nbsp;
+                                 <asp:LinkButton CssClass="footerlinks" ID="Book_Issuing_HREF" runat="server" OnClick="Book_Issuing_HREF_Click" Visible="False">
+                                  Book Issuing
+                                 </asp:LinkButton> &nbsp;
+                                 <asp:LinkButton CssClass="footerlinks" ID="Member_Managment_HREF" runat="server" OnClick="Member_Managment_HREF_Click" Visible="False">
+                                  Member Managment
+                                 </asp:LinkButton> &nbsp;
+                            </p>
+                        </div>
+                    </div>
+                </div>  
+                
+                <div id="footer2" class="container-fluid">                                  <!-- The main div, care creeaza partea maronie -->
+                    <div class="row">                                                       <!-- Div care largeste dimensiunea primului div -->
+                        <div class="col-xs-12 col-sm-12 col-md-12 text-center">             <!-- Div care centreaza textu(elementele) pe mijloc -->
+                            <p style="color:whitesmoke">&copy All right Reserved            <!-- Paragraf unde e textu-->
+                                <a class="footerlinks" href="#" target="_blank"> Yeey</a>   <!-- Href in interior la paragraf , nu tot paragrafu un singur href-->
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </footer>
+
+         
+    </form>
+</body>
+</html>
+
